@@ -25,10 +25,6 @@ function HomePage() {
             <HeaderTitle>Profile</HeaderTitle>
             <article className="profile__content container">
                 <div className="profile__box">
-                    <label className="profile__edit">
-                        <input className="profile__input-file" accept="image/*" onChange={changeHandler} type="file" />
-                        <img src={editBtn} alt="edit" />
-                    </label>
 
                     <div className="profile__ava-box">
                         <img className="profile__ava" src={avatar} alt="User" />
