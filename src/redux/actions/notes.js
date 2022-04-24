@@ -36,7 +36,7 @@ export const getNotes = () => {
 export const deleteFile = (task) => {
     return async dispatch => {
         try {
-            await axios.delete(`${API_URL_NOTES}delete/${task._id}`, {
+            await axios.delete(`${API_URL_NOTES}delete?id=${task._id}`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             dispatch(deleteNoteAC(task._id));
@@ -50,7 +50,7 @@ export const deleteFile = (task) => {
 export const updateEditNote = ({title, description, marking, status}, id) => {
     return async dispatch => {
         try {
-            const response = await axios.put(`${API_URL_NOTES}update/${id}`, {title, description, marking, status}, {
+            const response = await axios.put(`${API_URL_NOTES}edit/${id}`, {title, description, marking, status}, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             dispatch(updateEditNoteAC(response.data));
