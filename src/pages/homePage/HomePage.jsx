@@ -1,7 +1,6 @@
 import React from 'react';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteAvatar, uploadAvatar } from '../../redux/actions/user';
+import { useSelector } from 'react-redux';
 import {SERVER_URL} from '../../env.js';
 
 import defaultAvatar from '../../resources/img/profile-img.png';
