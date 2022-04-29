@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Notes from '../../components/notes/Notes';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import PlusElem from '../../components/UI/elems/PlusMinusElem';
 import ButtonItem from '../../components/UI/buttons/ButtonItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CreateNote from '../../components/createNote/CreateNote';
 import { changeHidden } from '../../redux/actions/global';
-import { getNotes } from '../../redux/actions/notes';
 
 import plusIco from '../../resources/icons/addTask.svg';
 import './notesPage.scss';
@@ -16,10 +15,6 @@ function NotesPage() {
     const dispatch = useDispatch();
     const getAllNotes = useSelector(state => state.notes.notesList);
     const hiddenCreate = useSelector(state => state.global.isHidden);
-
-    useEffect(() => {
-        dispatch(getNotes())
-    }, [dispatch]);
 
     const showCreateNote = (e) => {
         e.preventDefault();
