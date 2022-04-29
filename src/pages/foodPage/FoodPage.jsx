@@ -21,7 +21,7 @@ function FoodPage() {
         if (isAuth) {
             dispatch(getFoods())
         }
-    }, [dispatch]);
+    }, [dispatch, isAuth]);
 
     const [hiddenContent, setHiddenContent] = useState(false);
     const widthScreen = window.innerWidth;
