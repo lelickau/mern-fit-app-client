@@ -9,12 +9,17 @@ import { changeHidden } from '../../redux/actions/global';
 
 import plusIco from '../../resources/icons/addTask.svg';
 import './notesPage.scss';
+import { getNotes } from '../../redux/actions/notes';
 
 function NotesPage() {
 
     const dispatch = useDispatch();
     const getAllNotes = useSelector(state => state.notes.notesList);
     const hiddenCreate = useSelector(state => state.global.isHidden);
+
+    useEffect(() => {
+        dispatch(getNotes())
+    }, [dispatch]);
 
     const showCreateNote = (e) => {
         e.preventDefault();
