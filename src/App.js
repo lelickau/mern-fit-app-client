@@ -22,11 +22,11 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (isAuth) {
+    if (isAuth && initialized) {
       dispatch(getNotes())
       dispatch(getFoods())
     }
-}, [dispatch, isAuth]);
+}, [dispatch, isAuth, initialized]);
 
   const routes = useRoutes(isAuth);
 

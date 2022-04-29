@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Notes from '../../components/notes/Notes';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import PlusElem from '../../components/UI/elems/PlusMinusElem';
