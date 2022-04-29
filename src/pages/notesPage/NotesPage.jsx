@@ -3,7 +3,7 @@ import Notes from '../../components/notes/Notes';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import PlusElem from '../../components/UI/elems/PlusMinusElem';
 import ButtonItem from '../../components/UI/buttons/ButtonItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CreateNote from '../../components/createNote/CreateNote';
 import { changeHidden } from '../../redux/actions/global';
 
