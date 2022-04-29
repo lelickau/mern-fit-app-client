@@ -6,10 +6,10 @@ import ButtonItem from '../../components/UI/buttons/ButtonItem';
 import { useDispatch, useSelector } from 'react-redux';
 import CreateNote from '../../components/createNote/CreateNote';
 import { changeHidden } from '../../redux/actions/global';
+import { getNotes } from '../../redux/actions/notes';
 
 import plusIco from '../../resources/icons/addTask.svg';
 import './notesPage.scss';
-import { getNotes } from '../../redux/actions/notes';
 
 function NotesPage() {
 

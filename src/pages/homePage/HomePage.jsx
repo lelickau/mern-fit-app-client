@@ -2,10 +2,10 @@ import React from 'react';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import { useSelector } from 'react-redux';
 import {SERVER_URL} from '../../env.js';
+import { NavLink } from 'react-router-dom';
 
 import defaultAvatar from '../../resources/img/profile-img.png';
 import './homePage.scss';
-import { NavLink } from 'react-router-dom';
 
 function HomePage() {
     const user = useSelector(state => state.user.currentUser);

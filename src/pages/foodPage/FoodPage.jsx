@@ -5,9 +5,10 @@ import FoodItem from '../../components/foodItem/FoodItem';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import MyFoodList from '../../components/myFoodList/MyFoodList';
 import SearchFood from '../../components/searchFood/SearchFood';
+import { getFoods } from '../../redux/actions/foods';
 
 import './foodPage.scss';
-import { getFoods } from '../../../../deploy/service/foods-service';
+
 
 function FoodPage() {
     const {isAuth} = useSelector(state => state.user);
