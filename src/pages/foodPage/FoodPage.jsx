@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import LocalLoader from '../../components/loader/LocalLoader';
 import FoodItem from '../../components/foodItem/FoodItem';
 import HeaderTitle from '../../components/headerTitle/HeaderTitle';
 import MyFoodList from '../../components/myFoodList/MyFoodList';
 import SearchFood from '../../components/searchFood/SearchFood';
+import { getFoods } from '../../redux/actions/foods';
 
 import './foodPage.scss';
 
@@ -14,6 +15,13 @@ function FoodPage() {
     const allSearchedFoods = useSelector(state => state.foods.searchFoodList);
     const isError = useSelector(state => state.global.isError);
     const isLoading = useSelector(state => state.global.isLoading);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (isAuth) {
+            dispatch(getFoods())
+        }
+    }, [dispatch]);
 
     const [hiddenContent, setHiddenContent] = useState(false);
     const widthScreen = window.innerWidth;

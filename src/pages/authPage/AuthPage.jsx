@@ -9,6 +9,8 @@ import showPass from '../../resources/icons/show-pass.svg'
 import hidePass from '../../resources/icons/hide-pass.svg'
 import logo from '../../resources/img/logo-bg.svg';
 import { useHistory } from 'react-router';
+import { getNotes } from '../../redux/actions/notes';
+import { getFoods } from '../../redux/actions/foods';
 
 function AuthPage() {
     const history = useHistory();
@@ -26,6 +28,11 @@ function AuthPage() {
     const [passErr, setPassErr] = useState('Please enter a password.');
     const [formValid, setFormValid] = useState(false)
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getNotes())
+        dispatch(getFoods())
+    }, [dispatch]);
 
     const blurHandler = (e) => {
         switch (e.target.name) {
@@ -95,7 +102,6 @@ function AuthPage() {
     const preventDef = (e) => {
         e.preventDefault();
     }
-
 
     return (
         <div className="auth">
